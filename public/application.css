@@ -1,0 +1,7 @@
+input {
+  display: inline-block;
+}
+
+.recipe-item {
+  margin-bottom: 2rem;
+}

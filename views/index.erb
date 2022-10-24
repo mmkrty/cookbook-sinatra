@@ -1,0 +1,18 @@
+<h1>The Cookbook</h1>
+<ul>
+  <% @recipes.each_with_index do |recipe, index| %>
+   <li class="recipe-item" >
+      <a href=<%="/recipe/#{index}"%>>
+      <p class="display-6"><%= "#{recipe.done? ? "[x]" : "[ ]"} #{recipe.name}" %></p>
+      </a>
+      <form method="post" action="/delete"  style=" display:inline!important;">
+        <input type="hidden" name="idx" value=<%="#{index}"%> >
+        <input class='btn btn-primary' type='submit' value='Delete'>
+      </form>
+      <form method="post" action="/done"  style=" display:inline!important;">
+        <input type="hidden" name="idx" value=<%="#{index}"%> >
+        <input class='btn btn-success' type='submit' value='Done'>
+      </form>
+   </li>
+  <% end %>
+</ul>
